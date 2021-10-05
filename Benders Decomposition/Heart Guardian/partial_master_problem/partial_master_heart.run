@@ -1,0 +1,8 @@
+reset;
+
+model partial_master_heart_first_iter.mod;
+data  partial_master_heart_iter1.dat;
+
+option solver gurobi;
+solve;
+display z, open_from_master;

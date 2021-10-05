@@ -1,0 +1,17 @@
+# Data for iteration 2
+
+param site := 3;
+param market := 5;
+param fixed_cost := 1 400 2 250	3 300 ;
+param demand := 1 75 2 90 3 81 4 26 5 57;
+param dsum := 329;
+param shipping_cost:
+     1  2  3  4  5  :=
+1	4 7 3 12 15
+2	13 11 17 9 19
+3	8 12 10 7 5;
+param RHS_sup_cons := 1 0 2 0 3 0;
+#This is the y variable value you supply from solving the Partial Master 
+#But in the first iteration (or in others where you don'thave alternative) you need to give a somewhat arbitrary value to the open_from_master (i.e. y variables)
+param open_from_master:= 1 0 2 1 3 1;
+

@@ -1,0 +1,8 @@
+reset;
+
+model dual_subp_heart.mod;
+data  dual_subp_heart_iter2.dat;
+
+option solver gurobi;
+solve;
+display value, dual_supply_cap, dual_satisfy_demands;

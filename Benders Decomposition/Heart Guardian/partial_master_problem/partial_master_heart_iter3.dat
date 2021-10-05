@@ -1,0 +1,48 @@
+param site := 3;
+param market := 5;
+param fixed_cost := 1 400 2 250	3 300 ;
+param demand:= 1 75 2 90 3 81 4 26 5 57;
+param dsum := 329;
+param shipping_cost :
+     1  2  3  4  5  :=
+1	4 7 3 12 15
+2	13 11 17 9 19
+3	8 12 10 7 5;
+param RHS_sup_cons := 1 0 2 0 3 0;
+
+# P and D need to be changed at each iteration
+param P:= 2; #commented when solving iter 1
+param D:= 1;
+
+# param dual_supply_cap is commented at iter 1 because what was generated was a extreme direction
+param dual_supply_cap :
+   1 2 :=# this dimension will be extended according to the v's added up to a maximum of P values
+1 0  -7
+2 -3  0
+3 -10  0;
+
+# similarly param dual_satisfy_demands is commented also at iter 1 because wht was generated was not an extreme oint but a extreme direction
+param dual_satisfy_demands :
+ 1 2 := # this dimension will be extended according to the w's added up to a maximum of P values
+1 4 8
+2 7 11
+3 3 10
+4 12 7
+5 15 5;
+
+#in the next two lines the extreme directions
+# first for the supply
+param delta_dual_supply_cap :
+   1 := # this dimension will be extended according to the deltav's added up to a maximum of D values
+1  -1
+2  -1
+3  -1 ;
+
+# the for the demand constraints
+param delta_dual_sat_demands:
+    1 := # this dimension will be extended according to the deltaw;s added upt to a maximum of D values
+1  1
+2  1 
+3  1 
+4  1
+5  1 ;    

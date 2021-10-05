@@ -1,0 +1,8 @@
+reset;
+
+model reduced_primal_benders_prob_heart.mod;
+data  reduced_primal_benders_prob_heart.dat;
+
+option solver gurobi;
+solve;
+display cost, shipping_cost, units, open_from_master;

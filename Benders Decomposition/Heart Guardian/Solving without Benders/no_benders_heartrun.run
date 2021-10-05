@@ -1,0 +1,8 @@
+reset;
+
+model no_benders_heart.mod;
+data  no_benders_heart.dat;
+
+option solver gurobi;
+solve;
+display shipping_cost, units, open;
